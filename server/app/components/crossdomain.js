@@ -18,4 +18,4 @@ var netserver = net.createServer(function(socket){
 netserver.addListener("error",function(err){}); 
 netserver.listen(3014);
 
-console.log("Flash policy server has started.\nPlease see on http://127.0.0.1:3014/");
+console.log("Flash policy server 第二安全策略服务 has started.\nPlease see on http://127.0.0.1:3014/");

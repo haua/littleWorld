@@ -1,4 +1,4 @@
-package org.idream.pomelo
+﻿package org.idream.pomelo
 {
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
@@ -77,7 +77,6 @@ package org.idream.pomelo
 			
 			_handshake = callback;
 			
-//			trace("[Pomelo] load policy file:", "xmlsocket://" + host + ":3843");
 			Security.loadPolicyFile("xmlsocket://" + host + ":" + cross);
 			
 			if (!_socket)

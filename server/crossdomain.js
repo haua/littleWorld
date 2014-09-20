@@ -12,10 +12,11 @@ var netserver = net.createServer(function(socket){
     xml += '</cross-domain-policy>\n';
     if(socket && socket.readyState == 'open'){
       socket.write(xml);
+	  console.log("flash安全策略文件已输出");
       socket.end(); 
     }
 });
 netserver.addListener("error",function(err){console.log(err)}); 
 netserver.listen(3843);
 
-console.log("Flash policy server has started.\nPlease see on http://127.0.0.1:3843/");
+console.log("Flash policy server安全策略服务 has started.\nPlease see on http://127.0.0.1:3843/");
