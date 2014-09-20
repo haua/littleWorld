@@ -418,19 +418,48 @@
 					return;
 				}
 				pomelo.init(response.host, response.port, null, function(response:Object):void{
-					trace("登录后的response:"+response);
+					//
 					var route:String="connector.entryHandler.enter";
 					roomID=room;
 					pomelo.request(route, {username: username, rid: room}, function(data:Object):void{
+						trace("服务器返回的data:", JSON.stringify(data));   
 						addText(data.users);
-						/*pomelo.addEventListener('onAdd', addUserHandler);
+						pomelo.addEventListener('onAdd', addUserHandler);
 						pomelo.addEventListener('onLeave', removeUserHandler);
 						pomelo.addEventListener('onChat', chatHandler);
-						users=new ArrayCollection(data.users);
-						currentState='chat';*/
+						users=data.users;
+						//currentState='chat';
 					});
 				});
 			});
+		}
+		//添加用户
+		function addUserHandler(event:PomeloEvent):void{
+			trace(event.message);
+			users.push(event.message.user);
+		}
+		function removeUserHandler(event:PomeloEvent):void{
+			trace(event.message);
+			//users.removeItem(event.message.user);
+			users.splice(users.indexOf(event.message.user),1);
+		}
+		function chatHandler(event:PomeloEvent):void{
+			var o:Object=event.message;
+			addText('用户' + o.from + '说: ' + o.msg);
+		}
+		function sendMsg_clickHandler(event:MouseEvent):void{
+			var target:String = '*';
+			if (target != '*')
+				addText('你对' + target + '说:hahahahaha ' );
+			/*pomelo.request('chat.chatHandler.send', {content: msgInput.text, rid: roomID, target: target}, function(data:Object):void
+			{
+				trace(data);
+			});*/
+		}
+		function leave_clickHandler(event:MouseEvent):void{
+			pomelo.disconnect();
+			//currentState='login';
+			connected=false;
 		}
 		//***************************** 登录end
 		
