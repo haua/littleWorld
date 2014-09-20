@@ -1,0 +1,8 @@
+[2014-09-20 14:06:03.711] [INFO] pomelo - [32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\application.js] [39mapplication inited: "connector-server-2"
+[2014-09-20 14:06:05.864] [INFO] console - info: socket.io started
+[2014-09-20 14:06:05.903] [INFO] console - [32m[2014-09-20 14:06:05.903] [INFO] pomelo-admin - [39m[32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-admin\lib\consoleService.js] [39mtry to connect master: "connector", "127.0.0.1", 3005
+[2014-09-20 14:06:05.985] [INFO] pomelo - [32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\application.js] [39m"connector-server-2" enter after start...
+[2014-09-20 14:06:05.992] [INFO] pomelo - [32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\application.js] [39m"connector-server-2" finish start
+[2014-09-20 14:06:05.992] [INFO] pomelo - [32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\application.js] [39m"connector-server-2" startup in 2036 ms
+[2014-09-20 14:06:06.040] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\modules\monitorwatcher.js] [39m[connector-server-2] receive addServer signal: {"action":"addServer","server":{"main":"E:\\nodeJS\\littleWorld\\server\\app.js","env":"development","id":"chat-server-3","host":"127.0.0.1","port":6052,"serverType":"chat","pid":7832}}
+[2014-09-20 14:06:06.267] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\modules\monitorwatcher.js] [39m[connector-server-2] receive addServer signal: {"action":"addServer","server":{"main":"E:\\nodeJS\\littleWorld\\server\\app.js","env":"development","id":"gate-server-1","host":"127.0.0.1","clientPort":3014,"frontend":"true","serverType":"gate","pid":6392}}
