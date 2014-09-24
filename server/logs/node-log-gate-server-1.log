@@ -59,3 +59,266 @@
 [2014-09-20 17:17:45.991] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 9, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
 [2014-09-20 17:17:45.991] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [9], opts: {"type":"response","userOptions":{},"isResponse":true}
 [2014-09-20 17:17:45.996] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 9
+[2014-09-24 20:40:41.477] [INFO] pomelo - [32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\application.js] [39mapplication inited: "gate-server-1"
+[2014-09-24 20:40:45.570] [INFO] console - [32m[2014-09-24 20:40:45.569] [INFO] pomelo-admin - [39m[32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-admin\lib\consoleService.js] [39mtry to connect master: "gate", "127.0.0.1", 3005
+[2014-09-24 20:40:45.788] [INFO] pomelo - [32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\application.js] [39m"gate-server-1" enter after start...
+[2014-09-24 20:40:45.840] [INFO] pomelo - [32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\application.js] [39m"gate-server-1" finish start
+[2014-09-24 20:40:45.841] [INFO] pomelo - [32m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\application.js] [39m"gate-server-1" startup in 4203 ms
+[2014-09-24 20:40:45.843] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\modules\monitorwatcher.js] [39m[gate-server-1] receive addServer signal: {"action":"addServer","server":{"main":"E:\\nodeJS\\littleWorld\\server\\app.js","env":"development","id":"connector-server-2","host":"127.0.0.1","port":4051,"clientPort":3051,"frontend":"true","serverType":"connector","pid":6852}}
+[2014-09-24 20:40:45.846] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\modules\monitorwatcher.js] [39m[gate-server-1] receive addServer signal: {"action":"addServer","server":{"main":"E:\\nodeJS\\littleWorld\\server\\app.js","env":"development","id":"connector-server-1","host":"127.0.0.1","port":4050,"clientPort":3050,"frontend":"true","serverType":"connector","pid":596}}
+[2014-09-24 20:40:45.900] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\modules\monitorwatcher.js] [39m[gate-server-1] receive addServer signal: {"action":"addServer","server":{"main":"E:\\nodeJS\\littleWorld\\server\\app.js","env":"development","id":"connector-server-3","host":"127.0.0.1","port":4052,"clientPort":3052,"frontend":"true","serverType":"connector","pid":6132}}
+[2014-09-24 20:47:08.710] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 1
+[2014-09-24 20:47:08.723] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 1, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 20:47:08.728] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [1], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 20:47:08.738] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 1
+[2014-09-24 20:48:20.936] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 2
+[2014-09-24 20:48:20.942] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 2, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 20:48:20.943] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [2], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 20:48:20.947] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 2
+[2014-09-24 21:42:19.334] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 3
+[2014-09-24 21:42:19.340] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 3, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 21:42:19.340] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [3], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:42:19.345] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 3
+[2014-09-24 21:42:44.837] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 4
+[2014-09-24 21:42:44.837] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\connectors\hybrid\tcpsocket.js] [39mclose the connection with invalid head message, the remote ip is 127.0.0.1 && port is 8542 && message is [60,112,111,108,105,99,121,45,102,105,108,101,45,114,101,113,117,101,115,116,47,62,0]
+[2014-09-24 21:42:44.838] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 4
+[2014-09-24 21:44:57.004] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 5
+[2014-09-24 21:44:57.019] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 5, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 21:44:57.020] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [5], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:44:57.028] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 5
+[2014-09-24 21:48:14.287] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 6
+[2014-09-24 21:48:14.294] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 6, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 21:48:14.295] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [6], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:14.297] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 6
+[2014-09-24 21:48:42.221] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 7
+[2014-09-24 21:48:42.428] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":20,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 21:48:42.429] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 20, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.430] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":21,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:48:42.434] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:48:42.434] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 21, route: chat.chatHandler.move, msg: {"code":500}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.434] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":22,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:48:42.435] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:48:42.435] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 22, route: chat.chatHandler.move, msg: {"code":500}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.435] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":23,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:48:42.436] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:48:42.436] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 23, route: chat.chatHandler.move, msg: {"code":500}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.436] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":24,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:48:42.437] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:48:42.437] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 24, route: chat.chatHandler.move, msg: {"code":500}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.437] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":25,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:48:42.438] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:48:42.438] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 25, route: chat.chatHandler.move, msg: {"code":500}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.440] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":26,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:48:42.440] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:48:42.440] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 26, route: chat.chatHandler.move, msg: {"code":500}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.441] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":27,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:48:42.441] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:48:42.441] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 27, route: chat.chatHandler.move, msg: {"code":500}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.441] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":28,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:48:42.441] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:48:42.442] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 28, route: chat.chatHandler.move, msg: {"code":500}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.442] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 7, msg: {"id":29,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:48:42.442] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:48:42.443] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 29, route: chat.chatHandler.move, msg: {"code":500}, receivers: [7], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:48:42.443] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 7
+[2014-09-24 21:49:43.279] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 8
+[2014-09-24 21:49:43.493] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 8, msg: {"id":2,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 21:49:43.493] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 2, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [8], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:49:43.494] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 8, msg: {"id":3,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:49:43.496] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:49:43.502] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 3, route: chat.chatHandler.move, msg: {"code":500}, receivers: [8], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:49:43.503] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 8, msg: {"id":4,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:49:43.503] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:49:43.504] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 4, route: chat.chatHandler.move, msg: {"code":500}, receivers: [8], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:49:43.504] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 8, msg: {"id":5,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:49:43.504] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:49:43.505] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 5, route: chat.chatHandler.move, msg: {"code":500}, receivers: [8], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:49:43.505] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 8, msg: {"id":6,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:49:43.506] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:49:43.507] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 6, route: chat.chatHandler.move, msg: {"code":500}, receivers: [8], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:49:43.508] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 8, msg: {"id":7,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:49:43.512] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:49:43.512] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 7, route: chat.chatHandler.move, msg: {"code":500}, receivers: [8], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:49:43.513] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 8, msg: {"id":8,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:49:43.513] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:49:43.514] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 8, route: chat.chatHandler.move, msg: {"code":500}, receivers: [8], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:49:43.514] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 8, msg: {"id":9,"type":0,"compressRoute":1,"route":"chat.chatHandler.move","body":{"content":"测试服务器"}}
+[2014-09-24 21:49:43.514] [ERROR] pomelo - [31m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js] [39mfail to forward message:TypeError: Cannot read property 'length' of undefined
+    at Object.crc32 (E:\nodeJS\littleWorld\server\node_modules\crc\lib\crc.js:322:13)
+    at Object.module.exports.dispatch (E:\nodeJS\littleWorld\server\app\util\dispatcher.js:4:27)
+    at exp.chat (E:\nodeJS\littleWorld\server\app\util\routeUtil.js:12:23)
+    at E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\proxy.js:244:7
+    at getRouteTarget (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:345:11)
+    at proxyCB (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\rpc-client\client.js:290:5)
+    at Object.proxy [as forwardMessage] (E:\nodeJS\littleWorld\server\node_modules\pomelo\node_modules\pomelo-rpc\lib\util\proxy.js:56:15)
+    at doForward (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:334:50)
+    at dispatch (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\server\server.js:103:7)
+    at next (E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\filterService.js:50:7)
+[2014-09-24 21:49:43.515] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 9, route: chat.chatHandler.move, msg: {"code":500}, receivers: [8], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:49:43.517] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 8
+[2014-09-24 21:52:21.709] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 9
+[2014-09-24 21:52:21.717] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 9, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 21:52:21.718] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [9], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:52:21.721] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 9
+[2014-09-24 21:52:28.437] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 10
+[2014-09-24 21:52:28.447] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 10, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 21:52:28.448] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [10], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:52:28.451] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 10
+[2014-09-24 21:52:50.626] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 11
+[2014-09-24 21:52:50.632] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 11, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 21:52:50.632] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [11], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:52:50.635] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 11
+[2014-09-24 21:52:54.426] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] getSession session is created with session id: 12
+[2014-09-24 21:52:54.436] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] handleMessage session id: 12, msg: {"id":1,"type":0,"compressRoute":1,"route":"gate.gateHandler.queryEntry","body":{"uid":"test"}}
+[2014-09-24 21:52:54.436] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\components\connector.js] [39m[gate-server-1] send message reqId: 1, route: gate.gateHandler.queryEntry, msg: {"code":200,"host":"127.0.0.1","port":3051}, receivers: [12], opts: {"type":"response","userOptions":{},"isResponse":true}
+[2014-09-24 21:52:54.439] [DEBUG] pomelo - [36m[E:\nodeJS\littleWorld\server\node_modules\pomelo\lib\common\service\sessionService.js] [39msession on [gate-server-1] is closed with session id: 12

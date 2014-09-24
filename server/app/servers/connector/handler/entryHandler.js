@@ -9,7 +9,7 @@ var Handler = function(app) {
 var handler = Handler.prototype;
 
 /**
- * New client entry chat server.
+ * 新用户登录服务器.
  *
  * @param  {Object}   msg     request message
  * @param  {Object}   session current session object

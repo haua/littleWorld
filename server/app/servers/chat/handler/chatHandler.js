@@ -20,7 +20,7 @@ var handler = Handler.prototype;
  */
 handler.send = function(msg, session, next) {
 	var rid = session.get('rid');
-	var username = session.uid.split('*')[0];
+	var username = session.uid.split('*')[0];//调用此接口的用户名
 	var channelService = this.app.get('channelService');
 	var param = {
 		route: 'onChat',
@@ -28,7 +28,7 @@ handler.send = function(msg, session, next) {
 		from: username,
 		target: msg.target
 	};
-	channel = channelService.getChannel(rid, false);
+	channel = channelService.getChannel(rid, false);//通过用户的房间信息获取其所在频道
 
 	//the target is all users
 	if(msg.target == '*'){
@@ -46,4 +46,45 @@ handler.send = function(msg, session, next) {
 	next(null, {
 		route: msg.route
 	});
-};
+}
+//用户开始移动的控制器
+handler.startMove = function(msg, session, next){
+	var moveTowards = msg.moveTowards;//移动的方向
+	var target = msg.target;//信息传送的对象
+	var username = session.uid.split('*')[0];
+	var param = {
+		route: 'onStartMove',
+		moveTowards: moveTowards,
+		from: username,
+		target: target
+	};
+	channel = channelService.getChannel(rid, false);
+	channel.pushMessage(param);//广播事件
+	
+	next(null, {
+		result:true
+	});
+}
+//用户结束移动的控制器
+handler.endMove = function(msg, session, next){
+	var nowX = msg.nowX;//用户最终的位置
+	var nowTowards = msg.towards;//用户最终的脸朝向
+	var target = msg.target;
+	var username = session.uid.split('*')[0];
+	var param = {
+		route: 'onEndMove',
+		nowX: nowX,
+		nowTowards: nowTowards,
+		from: username,
+		target: target
+	};
+	channel = channelService.getChannel(rid, false);
+	channel.pushMessage(param);//广播事件
+	
+	next(null, {//如果客户端收不到信息，表示断线了
+		result:true
+	});
+}
+
+
+
