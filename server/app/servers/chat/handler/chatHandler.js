@@ -31,12 +31,12 @@ handler.send = function(msg, session, next) {
 	channel = channelService.getChannel(rid, false);
 
 	//the target is all users
-	if(msg.target == '*') {
-		channel.pushMessage(param);
+	if(msg.target == '*'){
+		channel.pushMessage(param);//广播事件
 	}
 	//the target is specific user
 	else {
-		var tuid = msg.target + '*' + rid;
+		var tuid = msg.target + '*' + rid;//目标用户加房间号
 		var tsid = channel.getMember(tuid)['sid'];
 		channelService.pushMessageByUids(param, [{
 			uid: tuid,

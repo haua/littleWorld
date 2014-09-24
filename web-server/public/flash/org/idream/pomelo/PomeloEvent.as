@@ -16,8 +16,7 @@ package org.idream.pomelo
 		
 		public var message:Object;
 		
-		public function PomeloEvent(type:String, message:Object = null, bubbles:Boolean=false, cancelable:Boolean=false)
-		{
+		public function PomeloEvent(type:String, message:Object = null, bubbles:Boolean=false, cancelable:Boolean=false){
 			super(type, bubbles, cancelable);
 			
 			this.message = message;
