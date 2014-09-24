@@ -1,4 +1,0 @@
-
-gate：客户端线连接gate服务器，然后再由gate决定客户端和哪个connector连接
-connector：frontend前端服务器，承载连接，并把请求转发到后端的服务器群
-chat：backend后端服务器，真正处理业务逻辑的地方

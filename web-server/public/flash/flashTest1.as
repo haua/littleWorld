@@ -406,25 +406,26 @@
 		function doLogin():void{
 			/**
  			 * 向服务器请求数据
- 			 * @param route (gate.gateHandler.queryEntry 分别代表了服务器类型、服务端相应的文件名及对应的方法名，在服务器中的servers\gate\handler的js文件中有对应的响应)
+ 			 * @param route
  			 * @param msg
  			 * @param callback 服务器返回数据时会回调
 			 public function request(route:String, msg:Object, callback:Function = null):void {}
  			*/
-			pomelo.request("gate.gateHandler.queryEntry", {uid: 'test'}, function(response:Object):void{//向服务端请求连接，连接成功后会给分配服务器哦
+			pomelo.request("gate.gateHandler.queryEntry", {uid: 'test'}, function(response:Object):void{
+				trace("反应主机：", response.host, " 端口：", response.port);
 				if (response.code == '500'){
 					trace("登录时500错误："+response.message);
 					return;
 				}
-				trace("分配的服务器是：", response.host, " 端口：", response.port);
 				pomelo.init(response.host, response.port, null, function(response:Object):void{
 					//
+					var route:String="connector.entryHandler.enter";
 					roomID=room;
-					pomelo.request("connector.entryHandler.enter", {username: username, rid: room}, function(data:Object):void{//告诉服务器：登录人的id和房间号，这一步才是真正的登录
+					pomelo.request(route, {username: username, rid: room}, function(data:Object):void{
 						trace("服务器返回的data:", JSON.stringify(data));   
 						addText(data.users);
-						pomelo.addEventListener('onAdd', addUserHandler);//添加其它用户
-						pomelo.addEventListener('onLeave', removeUserHandler);//其它用户离开
+						pomelo.addEventListener('onAdd', addUserHandler);
+						pomelo.addEventListener('onLeave', removeUserHandler);
 						pomelo.addEventListener('onChat', chatHandler);
 						users=data.users;
 						//currentState='chat';
@@ -448,12 +449,12 @@
 		}
 		function sendMsg_clickHandler(event:MouseEvent):void{
 			var target:String = '*';
-			var speakText:String = '哈哈哈哈哈';
 			if (target != '*')
-				addText( '你对' + target + '说:' + speakText );
-			pomelo.request('chat.chatHandler.send', {content: speakText, rid: roomID, target: target}, function(data:Object):void{
+				addText('你对' + target + '说:hahahahaha ' );
+			/*pomelo.request('chat.chatHandler.send', {content: msgInput.text, rid: roomID, target: target}, function(data:Object):void
+			{
 				trace(data);
-			});
+			});*/
 		}
 		function leave_clickHandler(event:MouseEvent):void{
 			pomelo.disconnect();

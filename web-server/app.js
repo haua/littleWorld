@@ -12,14 +12,14 @@ app.configure(function(){
 });
 
 app.configure('development', function(){
-	app.use(express.static(__dirname + '/public'));
-	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  app.use(express.static(__dirname + '/public'));
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function(){
-	var oneYear = 31557600000;
-	app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
-	app.use(express.errorHandler());
+  var oneYear = 31557600000;
+  app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
+  app.use(express.errorHandler());
 });
 
 console.log("网页服务已经启动.\n请访问 http://127.0.0.1:3001/index.html");
