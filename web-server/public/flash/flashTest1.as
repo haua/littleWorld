@@ -71,7 +71,6 @@
 			myHero.retuObj(function(obj:Object,i:String,ii:String){
 				
 				heros.unshift(obj);//把我的英雄添加到数组第一位
-				trace(heros[0].mc + "            +" + heros[0].name);
 			});
 			
 			creatDialogue();
@@ -81,6 +80,7 @@
 			
 			stage.addEventListener(KeyboardEvent.KEY_DOWN,keyDownFunction);
 			stage.addEventListener(KeyboardEvent.KEY_UP,keyUpFunction);
+			
 			
 			//addEventListener(Event.ACTIVATE,stageActivate);
 			//addEventListener(Event.DEACTIVATE,stageLostActivate);
@@ -201,20 +201,16 @@
 				}
 			}
 		
+		
 		function keyDownFunction(event:KeyboardEvent){
 			//检测输入法,并关掉(中文输入状态下的event.keyCode都等于229的)
-			testText.text= "按下的代码是： "+event.keyCode;
+			addText("按下的代码是： "+event.keyCode,10,0);
 			if(!speakInputOpen){
 				IME.enabled=false;
 				if (event.keyCode == 65||event.keyCode==37) {heros[0].moveLeft = true;}  //按下A
 				if (event.keyCode == 68||event.keyCode==39) {heros[0].moveRight = true;} //按下D
 			}
 			
-			//通知移动服务器
-			pomelo.request('chat.chatHandler.move', {content: "测试服务器"}, function(data:Object):void{
-				addText(data.users);
-				trace(data);
-			});
 			
 			//按下ctrl+回车、shift+回车、alt+回车
 			if(dialogueMain.mc!=null||dialogueMain.mc!=undefined){
@@ -265,7 +261,7 @@
 		function keyUpFunction(event:KeyboardEvent){
 			if (event.keyCode == 65||event.keyCode==37) {heros[0].moveLeft = false;}
 			if (event.keyCode == 68||event.keyCode==39) {heros[0].moveRight = false;}
-			}
+		}
 		
 		function goOnLoop(timeDiff:uint){
 			
@@ -283,10 +279,10 @@
 			addChild(testText);*/
 			
 			//角色运动
-			/*if(heros[0].mc!=null||heros[0].mc!=undefined){
+			if(heros.length){
 				if((!heros[0].moveLeft&&!heros[0].moveRight)||(heros[0].moveLeft&&heros[0].moveRight)){
 					heros[0].o=1;
-					}
+				}
 				else if(heros[0].moveLeft&&heros[0].mc.x>0)//向左
 				{
 					//物理移动
@@ -308,7 +304,40 @@
 					if(heros[0].o>heros[0].aRun2){heros[0].goTime=0;heros[0].o=heros[0].aRun1;}
 				}
 				heros[0].mc.gotoAndStop(heros[0].o);
-			}*/
+				
+				//如果我的角色状态变了，就告诉服务器
+				judgeMyHeroState();
+			}
+			
+		}//goonLoop end
+		
+		//如果我的角色状态变了，就告诉服务器
+		var myHeroLastState:Object = {moveLeft:false,moveRight:false};
+		function judgeMyHeroState(){
+			if(myHeroLastState.moveLeft == heros[0].moveLeft && myHeroLastState.moveRight == heros[0].moveRight){return;}
+			
+			var param:Object = new Object;
+			
+			if((!heros[0].moveLeft&&!heros[0].moveRight)||(heros[0].moveLeft&&heros[0].moveRight)){
+				param.nowX = heros[0].mc.x;
+				param.towards = heros[0].mc.scaleX>0?"right":"left";
+				pomelo.request('chat.chatHandler.endMove', param , function(data:Object):void{
+					trace(data);
+				});
+			}
+			else if((heros[0].moveLeft||heros[0].moveRight)&&heros[0].mc.x>0&&heros[0].mc.x<stage.stageWidth){
+				//通知移动服务器
+				if(heros[0].moveLeft){param.content = "moveLeft";}
+				else {param.content = "moveRight";}
+				pomelo.request('chat.chatHandler.startMove', param , function(data:Object):void{
+					trace(data);
+				});
+			}
+			
+			
+			myHeroLastState.moveLeft = heros[0].moveLeft;
+			myHeroLastState.moveRight = heros[0].moveRight;
+			
 		}
 		
 		//场景获得/失去焦点
