@@ -53,8 +53,7 @@
 		
 		public var heartbeat:int;
 		
-		public function Pomelo(useWeakReference:Boolean = true)
-		{
+		public function Pomelo(useWeakReference:Boolean = true){
 			_package = new Package();
 			_message = new Message();
 			_useWeakReference = useWeakReference;

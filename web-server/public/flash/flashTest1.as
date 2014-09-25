@@ -23,23 +23,26 @@
 	import flash.system.Security;
 	
 	//自定义类
-	import haua.addhero;//自定义类的名字中间不能有大写！！！这个居然花了我一个多小时解决！！！
+	import haua.Addhero;//自定义类的名字中间不能有大写！！！这个居然花了我一个多小时解决！！！
 	
 	public class flashTest1 extends MovieClip {
 		
-		//private var myhero:Object = new Object();//注册角色Object
+		private var heros:Array = new Array;//所有英雄的Object都会在这里，[0]是我的英雄
+		
+		private var myHero:Addhero;//注册角色Object
+		
 		private var dialogueMain:Object = new Object();//注册对话框
+		
+		
 		
 		//static const heroStartX:uint = 615;//这个是用于设置人物随机出现的位置区间，因为chrome浏览器在页面没有完全加载的时候左下角会显示一行615px长的状态栏，挡住了视线。
 		//static const heroStartY:Number = 0.03;//这个是一个比例，英雄离地面的高度=场景的高度*heroStartY
 		//static const heroHeightScale= 80;//这是场景的高度-角色的高度的值，80就是对话框的高度。
 		
-		static const speedScale:uint=1500;//横向移动速度比率，数值越小，速度越快。计算公式角色的移动速度=场景的高度÷speedScale。
-		static const aGoSpeed:Number=1.5;//动画的速度，越大越慢
 		//static const aRun1:uint=3;//跑步的第一帧
 		//static const aRun2:uint=10;//跑步的最后一帧
 		
-		private var scene:Object=new Object();//注册场景
+		public static var scene:Object=new Object();//注册场景
 		static const heightScale:Number=0.06;//背景/场景的值，最好小于0.1，用于设定场景的高度
 		
 		private var lastTime:uint = 0;//上一次记录的时间
@@ -62,8 +65,14 @@
 			
 			creatScene();
 			
-			var myHero:addhero = new addhero;
-			addChild(heroo);
+			myHero = Addhero.returnHero("huhuhu");
+			stage.addChild(myHero);
+			var myHeroObj:Object;
+			myHero.retuObj(function(obj:Object,i:String,ii:String){
+				
+				heros.unshift(obj);//把我的英雄添加到数组第一位
+				trace(heros[0].mc + "            +" + heros[0].name);
+			});
 			
 			creatDialogue();
 			startStageResize();//一开始就排好版
@@ -73,8 +82,8 @@
 			stage.addEventListener(KeyboardEvent.KEY_DOWN,keyDownFunction);
 			stage.addEventListener(KeyboardEvent.KEY_UP,keyUpFunction);
 			
-			addEventListener(Event.ACTIVATE,stageActivate);
-			addEventListener(Event.DEACTIVATE,stageLostActivate);
+			//addEventListener(Event.ACTIVATE,stageActivate);
+			//addEventListener(Event.DEACTIVATE,stageLostActivate);
 			
 			stage.addEventListener(Event.ENTER_FRAME,mainLoop);//主循环
 			
@@ -197,8 +206,8 @@
 			testText.text= "按下的代码是： "+event.keyCode;
 			if(!speakInputOpen){
 				IME.enabled=false;
-				if (event.keyCode == 65||event.keyCode==37) {myhero.moveLeft = true;}  //按下A
-				if (event.keyCode == 68||event.keyCode==39) {myhero.moveRight = true;} //按下D
+				if (event.keyCode == 65||event.keyCode==37) {heros[0].moveLeft = true;}  //按下A
+				if (event.keyCode == 68||event.keyCode==39) {heros[0].moveRight = true;} //按下D
 			}
 			
 			//通知移动服务器
@@ -222,7 +231,7 @@
 					else{//这里要显示对话框
 						speakInputOpen = true;
 					
-						dialogueMain.mc.x = myhero.mc.x - dialogueMain.mc.width/2;
+						dialogueMain.mc.x = heros[0].mc.x - dialogueMain.mc.width/2;
 						dialogueMain.mc.y = 0;
 						
 						dialogueMain.mc.visible = true;//显示输入框的样式
@@ -254,14 +263,14 @@
 			
 		}
 		function keyUpFunction(event:KeyboardEvent){
-			if (event.keyCode == 65||event.keyCode==37) {myhero.moveLeft = false;}
-			if (event.keyCode == 68||event.keyCode==39) {myhero.moveRight = false;}
+			if (event.keyCode == 65||event.keyCode==37) {heros[0].moveLeft = false;}
+			if (event.keyCode == 68||event.keyCode==39) {heros[0].moveRight = false;}
 			}
 		
 		function goOnLoop(timeDiff:uint){
 			
 			//在页面中显示信息
-			testText.defaultTextFormat=textFormat;
+			/*testText.defaultTextFormat=textFormat;
 			
 			testText.x=10;
 			testText.y=0;
@@ -271,36 +280,35 @@
 			testText.autoSize = TextFieldAutoSize.CENTER;   
             testText.wordWrap = true;
 			testText.text=String(heroTalk.scrollV);
-			addChild(testText);
-			
+			addChild(testText);*/
 			
 			//角色运动
-			if(myhero.mc!=null||myhero.mc!=undefined){
-				if((!myhero.moveLeft&&!myhero.moveRight)||(myhero.moveLeft&&myhero.moveRight)){
-					myhero.o=1;
+			/*if(heros[0].mc!=null||heros[0].mc!=undefined){
+				if((!heros[0].moveLeft&&!heros[0].moveRight)||(heros[0].moveLeft&&heros[0].moveRight)){
+					heros[0].o=1;
 					}
-				else if(myhero.moveLeft&&myhero.mc.x>0)//向左
+				else if(heros[0].moveLeft&&heros[0].mc.x>0)//向左
 				{
 					//物理移动
-					myhero.mc.scaleX=-Math.abs(myhero.mc.scaleX);
-					myhero.mc.x-=timeDiff*myhero.moveSpeed;
+					heros[0].mc.scaleX=-Math.abs(heros[0].mc.scaleX);
+					heros[0].mc.x-=timeDiff*heros[0].moveSpeed;
 					//播放动画
-					myhero.goTime++;
-					myhero.o=uint(myhero.goTime/myhero.aGoSpeed+myhero.aRun1);
-					if(myhero.o>myhero.aRun2){myhero.goTime=0;myhero.o=myhero.aRun1;}
+					heros[0].goTime++;
+					heros[0].o=uint(heros[0].goTime/heros[0].aGoSpeed+heros[0].aRun1);
+					if(heros[0].o>heros[0].aRun2){heros[0].goTime=0;heros[0].o=heros[0].aRun1;}
 				}
-				else if(myhero.moveRight==true&&myhero.mc.x<stage.stageWidth)
+				else if(heros[0].moveRight==true&&heros[0].mc.x<stage.stageWidth)
 				{
 					//物理移动
-					myhero.mc.scaleX=Math.abs(myhero.mc.scaleX);
-					myhero.mc.x+=timeDiff*myhero.moveSpeed;
+					heros[0].mc.scaleX=Math.abs(heros[0].mc.scaleX);
+					heros[0].mc.x+=timeDiff*heros[0].moveSpeed;
 					//播放动画
-					myhero.goTime++;
-					myhero.o=uint(myhero.goTime/myhero.aGoSpeed+myhero.aRun1);
-					if(myhero.o>myhero.aRun2){myhero.goTime=0;myhero.o=myhero.aRun1;}
+					heros[0].goTime++;
+					heros[0].o=uint(heros[0].goTime/heros[0].aGoSpeed+heros[0].aRun1);
+					if(heros[0].o>heros[0].aRun2){heros[0].goTime=0;heros[0].o=heros[0].aRun1;}
 				}
-				myhero.mc.gotoAndStop(myhero.o);
-			}
+				heros[0].mc.gotoAndStop(heros[0].o);
+			}*/
 		}
 		
 		//场景获得/失去焦点
@@ -309,8 +317,8 @@
 			}
 		function stageLostActivate(event:Event){
 			testText.text = "失去焦点";
-			myhero.moveLeft = false;
-			myhero.moveRight = false;
+			heros[0].moveLeft = false;
+			heros[0].moveRight = false;
 			}
 		
 		//***************************** 登录
