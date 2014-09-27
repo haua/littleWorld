@@ -20,6 +20,7 @@ handler.enter = function(msg, session, next) {
 	var self = this;
 	var rid = msg.rid;//房间
 	var uid = msg.username + '*' + rid;
+	var userX = Math.ceil(Math.random()*msg.stageWidth);
 	
 	//获取sessionService，sessionService主要负责管理客户端连接session,
 	//对session完成一些基本操作，包括创建session、session绑定用户id、获取session绑定的用户id等。
@@ -46,7 +47,8 @@ handler.enter = function(msg, session, next) {
 	//put user into channel。该方法会向同一channel中的所有用户发送事件："onAdd"，事件参数为当前加入频道的单个用户的user对象，此方法位于chatRemote.js中
 	self.app.rpc.chat.chatRemote.add(session, uid, self.app.get('serverId'), rid, true, function(users){
 		next(null, {
-			users:users
+			users:users,
+			userX:userX
 		});
 	});
 };

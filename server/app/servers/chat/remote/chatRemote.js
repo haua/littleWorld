@@ -28,6 +28,7 @@ ChatRemote.prototype.add = function(uid, sid, name, flag, cb) {
 		route: 'onAdd',//这里route就是客户端要监听的事件，我们可以自定义的route，然后在客户端使用pomelo.on(“onXXX”,cb)就能监听自定义的route
 		user: username
 	};
+	
 	channel.pushMessage(param);//将param发送到同一channel的所有用户，只要用户监听onAdd，就能收到登录用户的用户名username
 
 	if( !! channel) {

@@ -35,18 +35,18 @@
 			addEvent();
 		}
    
-           //加载字节
-           public function loadBytes(bytes:ByteArray,lc:LoaderContext = null):void{
-              loader = new Loader;
-              loader.loadBytes(bytes,lc);
-              addEvent();
-            }
+		//加载字节
+		public function loadBytes(bytes:ByteArray,lc:LoaderContext = null):void{
+			loader = new Loader;
+			loader.loadBytes(bytes,lc);
+			addEvent();
+			}
    
-          //开始侦听
-            private function addEvent():void{
-              loader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS,progressFun);
-              loader.contentLoaderInfo.addEventListener(Event.COMPLETE,completeFun);
-            }
+		//开始侦听
+		private function addEvent():void{
+			loader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS,progressFun);
+			loader.contentLoaderInfo.addEventListener(Event.COMPLETE,completeFun);
+		}
    
             //结束侦听
             private function delEvent():void{

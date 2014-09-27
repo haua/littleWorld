@@ -29,7 +29,7 @@
 		
 		private var heros:Array = new Array;//所有英雄的Object都会在这里，[0]是我的英雄
 		
-		private var myHero:Addhero;//注册角色Object
+		
 		
 		private var dialogueMain:Object = new Object();//注册对话框
 		
@@ -56,8 +56,10 @@
 		//英雄说话用到的
 		var heroTalk:TextField = new TextField();
 		
+		
 		public function flashTest1() {
-			// constructor code一开始就运行
+			// constructor code 一开始就运行
+			
 			
 			//设置swf在html中的缩放方式
 			stage.scaleMode = StageScaleMode.NO_SCALE;//设置swf的缩放模式为不缩放
@@ -65,13 +67,25 @@
 			
 			creatScene();
 			
-			myHero = Addhero.returnHero("huhuhu");
-			stage.addChild(myHero);
-			var myHeroObj:Object;
-			myHero.retuObj(function(obj:Object,i:String,ii:String){
-				
-				heros.unshift(obj);//把我的英雄添加到数组第一位
+			/*//为了优化Addhero.as用的。
+			var newHero:Addhero = new Addhero("haua1");
+			stage.addChild(newHero);
+			newHero.retuObj(function(obj:Object,i:String,ii:String){
+				heros.push(obj);
+				trace("我叫"+heros[0].name);
+				//trace("有"+heros.length+"人，大家的名字： "+names);
+			
+			var newHero2:Addhero = new Addhero("haua2");
+			stage.addChild(newHero2);
+			newHero2.retuObj(function(obj:Object,i:String,ii:String){
+				heros.push(obj);
+				trace("我叫"+heros[0].name);
+				//trace("有"+heros.length+"人，大家的名字： "+names);
 			});
+			
+			});*/
+			
+			
 			
 			creatDialogue();
 			startStageResize();//一开始就排好版
@@ -87,10 +101,22 @@
 			
 			stage.addEventListener(Event.ENTER_FRAME,mainLoop);//主循环
 			
-			//login_mouseDownHandler();//登录
+			login_mouseDownHandler();//登录
 		}
 		
-		
+		function addSomeOne(hname:String){
+			var newHero:Addhero = new Addhero(hname);
+			
+			stage.addChild(newHero);
+			newHero.retuObj(function(obj:Object,i:String,ii:String){
+				heros.push(obj);
+				/*var names:String = new String;
+				for(var h:uint=0;h<heros.length;h++){
+					names=names.concat(heros[h].name+",");
+				}
+				trace("有"+heros.length+"人，大家的名字： "+names);*/
+			});
+		}
 		
 		
 			
@@ -176,19 +202,22 @@
 			scene.mc.width=stage.stageWidth;
 			scene.mc.x=0;
 			scene.mc.y=stage.stageHeight-scene.mc.height;
+			
 			//角色
-			/*if(hero1.mc!=null){
-				var heroVector:Number = hero1.mc.scaleX;//让角色向后看的时候变尺寸还能向后看
+			for(var i:uint=0;i<heros.length;i++){
+				
+				var heroVector:Number = heros[i].mc.scaleX;//让角色向后看的时候变尺寸还能向后看
 			
-				hero1.mc.height = stage.stageHeight-heroHeightScale;
-				hero1.mc.width = hero1.mc.height/hero1.heroScale;
-				hero1.mc.y = stage.stageHeight * (1 - heroStartY);
+				heros[i].mc.height = stage.stageHeight-heros[i].heightScale;
+				heros[i].mc.width = heros[i].mc.height/heros[i].heroScale;
+				heros[i].mc.y = stage.stageHeight * (1 - heros[i].startY);
+		
+				if(heroVector<0){heros[i].mc.scaleX=-Math.abs(heros[i].mc.scaleX);}
+				else{heros[i].mc.scaleX=Math.abs(heros[i].mc.scaleX);}
 			
-				if(heroVector<0){hero1.mc.scaleX=-Math.abs(hero1.mc.scaleX);}
-				else{hero1.mc.scaleX=Math.abs(hero1.mc.scaleX);}
-			
-				hero1.moveSpeed=stage.stageHeight/speedScale;
-			}*/
+				
+				
+			}
 		}
 		
 		function mainLoop(event:Event){
@@ -265,21 +294,10 @@
 		
 		function goOnLoop(timeDiff:uint){
 			
-			//在页面中显示信息
-			/*testText.defaultTextFormat=textFormat;
-			
-			testText.x=10;
-			testText.y=0;
-			//testText.border=true;
-			//testText.width=1000;
-			testText.height=20;
-			testText.autoSize = TextFieldAutoSize.CENTER;   
-            testText.wordWrap = true;
-			testText.text=String(heroTalk.scrollV);
-			addChild(testText);*/
 			
 			//角色运动
 			if(heros.length){
+				//我的角色
 				if((!heros[0].moveLeft&&!heros[0].moveRight)||(heros[0].moveLeft&&heros[0].moveRight)){
 					heros[0].o=1;
 				}
@@ -307,38 +325,36 @@
 				
 				//如果我的角色状态变了，就告诉服务器
 				judgeMyHeroState();
+				
+				//别人的角色
+				for(var i:uint=1;i<heros.length;i++){
+					var statu1:Boolean = heros[i].moveLeft&&heros[i].mc.x>0;//左移
+					var statu2:Boolean = heros[i].moveRight;//右移
+					if((statu1&&statu2)||(!statu1&&!statu2)){heros[i].o=0}
+					else if(statu1||statu2){
+						if(statu1){
+							heros[i].mc.scaleX=-Math.abs(heros[i].mc.scaleX);
+							heros[i].mc.x-=timeDiff*heros[i].moveSpeed;
+						}
+						else if(statu2){
+							//物理移动
+							heros[i].mc.scaleX=Math.abs(heros[i].mc.scaleX);
+							heros[i].mc.x+=timeDiff*heros[i].moveSpeed;
+						}
+						//播放动画
+						heros[i].goTime++;
+						heros[i].o=uint(heros[i].goTime/heros[i].aGoSpeed+heros[i].aRun1);
+						if(heros[i].o>heros[i].aRun2){heros[i].goTime=0;heros[i].o=heros[i].aRun1;}
+						
+					}
+					
+					heros[i].mc.gotoAndStop(heros[i].o);
+				}
 			}
 			
 		}//goonLoop end
 		
-		//如果我的角色状态变了，就告诉服务器
-		var myHeroLastState:Object = {moveLeft:false,moveRight:false};
-		function judgeMyHeroState(){
-			if(myHeroLastState.moveLeft == heros[0].moveLeft && myHeroLastState.moveRight == heros[0].moveRight){return;}
-			
-			var param:Object = new Object;
-			
-			if((!heros[0].moveLeft&&!heros[0].moveRight)||(heros[0].moveLeft&&heros[0].moveRight)){
-				param.nowX = heros[0].mc.x;
-				param.towards = heros[0].mc.scaleX>0?"right":"left";
-				pomelo.request('chat.chatHandler.endMove', param , function(data:Object):void{
-					trace(data);
-				});
-			}
-			else if((heros[0].moveLeft||heros[0].moveRight)&&heros[0].mc.x>0&&heros[0].mc.x<stage.stageWidth){
-				//通知移动服务器
-				if(heros[0].moveLeft){param.content = "moveLeft";}
-				else {param.content = "moveRight";}
-				pomelo.request('chat.chatHandler.startMove', param , function(data:Object):void{
-					trace(data);
-				});
-			}
-			
-			
-			myHeroLastState.moveLeft = heros[0].moveLeft;
-			myHeroLastState.moveRight = heros[0].moveRight;
-			
-		}
+		
 		
 		//场景获得/失去焦点
 		function stageActivate(event:Event){
@@ -350,12 +366,12 @@
 			heros[0].moveRight = false;
 			}
 		
-		//***************************** 登录
+		//***************************** 与服务器交互 *************************************************************************
 		var serverIP:String = "192.168.199.155";//"172.23.8.119""127.0.0.1"
 		
+		var username:String = "haua" + Math.random();
 		var pomelo:Pomelo = Pomelo.getIns();
 		private var connected:Boolean = false;
-		var username:String = "haua" + Math.random();
 		var room:String = "myRoom";
 		var roomID:String;
 		private var users:Array;
@@ -407,9 +423,22 @@
 				pomelo.init(response.host, response.port, null, function(response:Object):void{
 					//
 					roomID=room;
-					pomelo.request("connector.entryHandler.enter", {username: username, rid: room}, function(data:Object):void{//告诉服务器：登录人的id和房间号，这一步才是真正的登录
-						trace("服务器返回的data:", JSON.stringify(data));   
-						addText(data.users);
+					pomelo.request("connector.entryHandler.enter", {username: username, rid: room, stageWidth:stage.stageWidth}, function(data:Object):void{//告诉服务器：登录人的id和房间号，这一步才是真正的登录
+						
+						//登录成功创建自己的角色
+						var myHero:Addhero = new Addhero(username);
+						stage.addChild(myHero);
+						myHero.retuObj(function(obj:Object,i:String,ii:String){
+							heros.unshift(obj);//把我的英雄添加到数组第一位
+							heros[0].mc.x = data.userX;
+							
+							//创建别人的角色
+							for(var h:uint=0;h<data.users.length;h++){
+								if(data.users[h]!=heros[0].name)addSomeOne(data.users[h]);
+							}
+						});
+						
+						
 						pomelo.addEventListener('onAdd', someoneIn);//添加其它用户
 						pomelo.addEventListener('onLeave', someoneOut);//其它用户离开
 						pomelo.addEventListener('onChat', someoneTalk);
@@ -423,28 +452,85 @@
 		}
 		//添加用户
 		function someoneIn(eve:PomeloEvent):void{
-			addText(eve.message.user,10,30);
-			trace("新进来的人是:", JSON.stringify(eve.message));
-			users.push(eve.message.user);
+			addSomeOne(eve.message.user);
 		}
 		function someoneOut(eve:PomeloEvent):void{
-			trace(eve.message);
+			
 			//users.removeItem(event.message.user);
+			trace("离开前")
 			users.splice(users.indexOf(eve.message.user),1);
+			trace("离开了一个人，还有"+heros.length+"人");
 		}
 		//某人在说话
 		function someoneTalk(eve:PomeloEvent):void{
 			var obj:Object=eve.message;
 			addText('用户' + obj.from + '说: ' + obj.msg);
 		}
-		//某人开始移动
-		function someoneStartMove(eve:PomeloEvent):void{
-			var obj:Object=eve.message;
+		
+		//如果我的角色状态变了，就告诉服务器
+		var myHeroLastState:Object = {moveLeft:false,moveRight:false};
+		function judgeMyHeroState(){
+			if(myHeroLastState.moveLeft == heros[0].moveLeft && myHeroLastState.moveRight == heros[0].moveRight){return;}
+			
+			var param:Object = new Object;
+			
+			if((!heros[0].moveLeft&&!heros[0].moveRight)||(heros[0].moveLeft&&heros[0].moveRight)){
+				param.nowX = heros[0].mc.x;
+				param.towards = heros[0].mc.scaleX>0?"right":"left";
+				pomelo.request('chat.chatHandler.endMove', param , function(data:Object):void{
+					trace("结束移动：成功告诉服务器：", JSON.stringify(data));
+				});
+			}
+			else if((heros[0].moveLeft||heros[0].moveRight)&&heros[0].mc.x>0&&heros[0].mc.x<stage.stageWidth){
+				//通知移动服务器
+				if(heros[0].moveLeft){param.moveTowards = "left";}
+				else {param.moveTowards = "right";}
+				pomelo.request('chat.chatHandler.startMove', param , function(data:Object):void{
+					trace("开始移动：成功告诉服务器：", JSON.stringify(data));
+				});
+			}
+			
+			
+			myHeroLastState.moveLeft = heros[0].moveLeft;
+			myHeroLastState.moveRight = heros[0].moveRight;
 			
 		}
-		//某人结束移动
-		function someoneEndMove(e:PomeloEvent):void{
+		
+		//某人开始移动
+		function someoneStartMove(eve:PomeloEvent):void{
+			if(heros.length<2)return
 			
+			var obj:Object=eve.message;
+			if(obj.from==heros[0].name){trace("是自己在移动！！！");return}
+			for(var i:uint=1;i<heros.length;i++){
+				if(heros[i].name==obj.from){
+					if(obj.moveTowards=="left"){heros[i].moveLeft = true ;heros[i].moveRight = false;}
+					else if(obj.moveTowards=="right"){ heros[i].moveRight = true ;heros[i].moveLeft = false;}
+					else{trace("根本不知道他在向着哪移动",JSON.stringify(obj));}
+					break
+				}
+			}
+		}
+		//某人结束移动
+		function someoneEndMove(eve:PomeloEvent):void{
+			//trace("某人结束移动", JSON.stringify(eve.message));
+			if(heros.length<2)return
+			
+			var obj:Object=eve.message;
+			if(obj.from==heros[0].name){trace("是自己在移动！！！");return}
+			for(var i:uint=1;i<heros.length;i++){
+				if(heros[i].name==obj.from){
+					gotoTheCoord(heros[i],obj);
+					break
+				}
+			}
+		}
+		
+		function gotoTheCoord(target:Object,statu:Object){
+			target.moveLeft = target.moveRight = false;
+			if(target.x>statu.nowX){
+				
+			}
 		}
 		
 		function sendMsg_clickHandler(event:MouseEvent):void{

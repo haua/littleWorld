@@ -11,7 +11,7 @@ var Handler = function(app) {
 var handler = Handler.prototype;
 
 /**
- * Send messages to users
+ * 用户发送信息
  *
  * @param {Object} msg message from client
  * @param {Object} session
@@ -58,6 +58,9 @@ handler.startMove = function(msg, session, next){
 		from: username,
 		target: target
 	};
+	
+	var rid = session.get('rid');
+	var channelService = this.app.get('channelService');
 	channel = channelService.getChannel(rid, false);
 	channel.pushMessage(param);//广播事件
 	
@@ -78,6 +81,9 @@ handler.endMove = function(msg, session, next){
 		from: username,
 		target: target
 	};
+	
+	var rid = session.get('rid');
+	var channelService = this.app.get('channelService');
 	channel = channelService.getChannel(rid, false);
 	channel.pushMessage(param);//广播事件
 	
