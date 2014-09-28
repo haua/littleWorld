@@ -21,22 +21,23 @@ var ChatRemote = function(app) {
  * @param {boolean} flag flag用于控制是获取channel还是创建channel
  *
  */
-ChatRemote.prototype.add = function(uid, sid, name, flag, cb) {
+ChatRemote.prototype.add = function(uid, sid, name,userX, flag, cb){
 	var channel = this.channelService.getChannel(name, flag);//当flag为true且名为name的channel不存在，则会创建channel，否则返回名为name的channel
 	var username = uid.split('*')[0];
 	var param = {
 		route: 'onAdd',//这里route就是客户端要监听的事件，我们可以自定义的route，然后在客户端使用pomelo.on(“onXXX”,cb)就能监听自定义的route
-		user: username
+		user: username,
+		userX: userX
 	};
 	
 	channel.pushMessage(param);//将param发送到同一channel的所有用户，只要用户监听onAdd，就能收到登录用户的用户名username
-
+	
 	if( !! channel) {
-		channel.add(uid, sid);//将userid和serverid放入channel中
+		channel.add(uid, sid);//将userid放入channel中，serverID作为参数
 	}
 
-	cb(this.get(name, flag));//调用get()方法，向回调函数传入get()的返回结果（同一channel中的所有用户）
-};
+	cb(this.get(name, flag));//调用get()方法，向回调函数传入get()的返回结果（同一channel中的所有用户），这个方法在下面
+}
 
 /**
  * Get user from chat channel.
@@ -54,6 +55,7 @@ ChatRemote.prototype.get = function(name, flag) {
 		users = channel.getMembers();//该channel下的所有uid和sid，这些id是由上面的这句 channel.add(uid, sid)添加进去的
 	}
 	for(var i = 0; i < users.length; i++) {
+		console.log(users[i]);
 		users[i] = users[i].split('*')[0];
 	}
 	return users;

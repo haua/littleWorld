@@ -82,6 +82,7 @@ handler.endMove = function(msg, session, next){
 		target: target
 	};
 	
+	
 	var rid = session.get('rid');
 	var channelService = this.app.get('channelService');
 	channel = channelService.getChannel(rid, false);

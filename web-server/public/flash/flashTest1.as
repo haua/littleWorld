@@ -104,20 +104,6 @@
 			login_mouseDownHandler();//登录
 		}
 		
-		function addSomeOne(hname:String){
-			var newHero:Addhero = new Addhero(hname);
-			
-			stage.addChild(newHero);
-			newHero.retuObj(function(obj:Object,i:String,ii:String){
-				heros.push(obj);
-				/*var names:String = new String;
-				for(var h:uint=0;h<heros.length;h++){
-					names=names.concat(heros[h].name+",");
-				}
-				trace("有"+heros.length+"人，大家的名字： "+names);*/
-			});
-		}
-		
 		
 			
 		//注册场景
@@ -349,11 +335,12 @@
 					}
 					
 					heros[i].mc.gotoAndStop(heros[i].o);
+					
+					heroMoveTo(heros[i]);
 				}
 			}
 			
 		}//goonLoop end
-		
 		
 		
 		//场景获得/失去焦点
@@ -367,7 +354,7 @@
 			}
 		
 		//***************************** 与服务器交互 *************************************************************************
-		var serverIP:String = "192.168.199.155";//"172.23.8.119""127.0.0.1"
+		var serverIP:String = "172.23.8.119";//"192.168.199.155""127.0.0.1"
 		
 		var username:String = "haua" + Math.random();
 		var pomelo:Pomelo = Pomelo.getIns();
@@ -452,7 +439,7 @@
 		}
 		//添加用户
 		function someoneIn(eve:PomeloEvent):void{
-			addSomeOne(eve.message.user);
+			addSomeOne(eve.message.user,eve.message.userX);
 		}
 		function someoneOut(eve:PomeloEvent):void{
 			
@@ -520,17 +507,36 @@
 			if(obj.from==heros[0].name){trace("是自己在移动！！！");return}
 			for(var i:uint=1;i<heros.length;i++){
 				if(heros[i].name==obj.from){
-					gotoTheCoord(heros[i],obj);
+					gotoTheCoord(heros[i], obj.nowX, obj.nowTowards);
+					trace(heros[i].targetX);
 					break
 				}
 			}
 		}
 		
-		function gotoTheCoord(target:Object,statu:Object){
-			target.moveLeft = target.moveRight = false;
-			if(target.x>statu.nowX){
-				
+		function gotoTheCoord(hero:Object,targetX,towards){
+			hero.moveLeft = hero.moveRight = false;
+			hero.needToMove = true;
+			hero.targetX = targetX;
+			hero.towards = towards;
+		}
+		
+		//让英雄移动到指定点的方法，每帧遍历所有英雄
+		function heroMoveTo(hero:Object){
+			if(!hero.needToMove)return
+			
+			if(hero.mc.x>hero.targetX+5){hero.moveLeft = true;hero.moveRight = false;}
+			else if(hero.mc.x<hero.targetX-5){hero.moveRight = true;hero.moveLeft = false;}
+			else{
+				hero.moveRight = hero.moveLeft = hero.needToMove = false;
+				if(hero.towards=="left"){hero.mc.scaleX=-Math.abs(hero.mc.scaleX);}
+				else if(hero.towards=="right"){hero.mc.scaleX=Math.abs(hero.mc.scaleX);}
+				else{trace("不知道此人最后面的朝向");}
 			}
+			//hero.targetX = targetX;
+			//hero.towards = towards;
+			
+			
 		}
 		
 		function sendMsg_clickHandler(event:MouseEvent):void{
@@ -549,6 +555,23 @@
 			//currentState='login';
 			connected=false;
 		}
+		
+		
+		function addSomeOne(hname:String,heroX:uint=-1){
+			var newHero:Addhero = new Addhero(hname);
+			
+			stage.addChild(newHero);
+			newHero.retuObj(function(obj:Object,i:String,ii:String){
+				if(heroX!=-1){obj.mc.x = heroX;}
+				heros.push(obj);
+				/*var names:String = new String;
+				for(var h:uint=0;h<heros.length;h++){
+					names=names.concat(heros[h].name+",");
+				}
+				trace("有"+heros.length+"人，大家的名字： "+names);*/
+			});
+		}
+		
 		//***************************** 登录end
 		
 		//在屏幕中显示能修改，能操作的文字，
