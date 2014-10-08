@@ -7,7 +7,7 @@ littleWorld
 ===========
 1、需要先安装好pomelo，具体安装方法：<a href="https://github.com/NetEase/pomelo/wiki/pomelo%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97" target="_blank">pomelo快速使用指南</a>
 
-2、依次双击运行 "1-pomelo_start.bat"，"2-open-crossdomain.bat"，"3-web-start.bat" 这三个文件，然后使用浏览器登陆3001端口，点击“打开flash”就可以看到flash了。
+2、依次双击运行 <a color="red">1-pomelo_start.bat</a>，"2-open-crossdomain.bat"，"3-web-start.bat" 这三个文件，然后使用浏览器登陆3001端口，点击“打开flash”就可以看到flash了。
 
 【更新日志】
 ===========
